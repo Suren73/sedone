@@ -14,17 +14,35 @@
     src: url('../fonts/ptsans-700.woff2') format('woff2');
 }
 
+
 /* Common */
 
 .page {
+    height: 100%;
+
     color: #333333;
+    background-color: #F2F2F2;
+
     font-family: 'PT Sans', sans-serif;
     font-size: 18px;
 }
 
+.page-body {
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    min-height: 100%;
+    margin: 0 auto;
+
+    background-color: #ffffff;
+}
+
+/* Button */
+
 .button {
-    color: #fff;
-    background: #83B3D3;
+    color: #ffffff;
+    background-color: #83B3D3;
+
     font-family: inherit;
     font-size: 16px;
     font-weight: 700;
@@ -42,41 +60,40 @@
 
 /* Header */
 
-.page-header {}
-
-.header-nav {}
-
-.logo {}
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 72px;
+}
 
 .site-menu {
+    margin: 0;
+    padding: 0;
     font-weight: 700;
     font-size: 20px;
     line-height: 26px;
 }
-
-.site-menu-item {}
-
-.site-menu-item-active {}
 
 .site-menu-link {
     color: #000000;
     text-decoration: none;
 }
 
-.additional-menu {}
-
-.icon-button {}
-
-.visually-hidden {}
-
-.icon-button-counter {}
-
-
 /* Main */
 
-.page-main {}
+.page-main {
+    flex-grow: 1;
+}
+
+.main-promo {
+    min-height: 485px;
+    background-color: #83B3D3;
+    background-image: url("../images/background/promo.jpg");
+}
 
 .main-header {
+    padding: 35px 72px 80px;
+
     color: #ffffff;
     background-color: #83B3D3;
     background-image: url('../images/background/main-header.jpg');
@@ -84,11 +101,15 @@
 }
 
 .main-heading {
+    margin: 0;
+
     font-size: 60px;
     line-height: 78px;
 }
 
 .breadcrumbs {
+    margin: 0;
+    padding: 0;
     font-size: 16px;
 }
 
@@ -96,6 +117,7 @@
 
 .section-title {
     color: #000000;
+
     font-size: 30px;
     font-weight: 700;
     line-height: 36px;
@@ -104,14 +126,19 @@
 
 .section-description {
     font-size: 22px;
-    line-height: 36px;
+    line-height: 26px;
 }
 
 /* Advantages */
 
-.advantages {}
+.advantages {
+    text-align: center;
+}
 
-.advantages-list {}
+.advantages-list {
+    margin: 0;
+    padding: 0;
+}
 
 .advantages-list-inner {
     color: #333333;
@@ -152,18 +179,17 @@
     line-height: 21px;
 }
 
-.advantages-img {}
+/* Search */
 
-
-.search {}
-
-.search-button {}
-
-.button-large {}
+.search {
+    text-align: center;
+}
 
 /* Subscribe */
 
-.subscribe {}
+.subscribe {
+    text-align: center;
+}
 
 .subscribe-primary .section-title {
     color: #ffffff;
@@ -178,20 +204,13 @@
 
 /* Forms */
 
-.subcribe-form {}
-
-.subscribe-field {
+.field-input {
     font-family: inherit;
     font-size: 18px;
 
     background-color: #f2f2f2;
 }
 
-.field {}
-
-.field-input {}
-
-.subscribe-button {}
 
 /* Range */
 
@@ -227,6 +246,17 @@
 
 /* Pagination */
 
+.pagination-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagination-list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
 .pagination-link {
     color: #ffffff;
     background-color: #83B3D3;
@@ -236,7 +266,15 @@
     text-decoration: none;
 }
 
+.pagination-select {
+    display: flex;
+}
+
 /* Filter */
+
+.filter-form {
+    display: flex;
+}
 
 .filter-title {
     font-size: 20px;
@@ -244,7 +282,32 @@
     line-height: 26px;
 }
 
+.filter-fieldset {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    margin-right: 17px;
+}
+
+.filter-fieldset-price {
+    width: 287px;
+    margin-left: 95px;
+}
+
+.filter-list {
+    margin: 0;
+    padding: 0;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 160px;
+    margin-left: 64px;
+}
+
 .filter-reset {
+    text-align: center;
     color: #ffffff;
     background-color: transparent;
 
@@ -252,19 +315,50 @@
     font-size: 18px;
 }
 
+/* Catalog */
+
+.catalog {
+    padding: 0 72px;
+}
+
+.catalog-sort {
+    display: flex;
+    justify-content: space-between;
+}
+
+.catalog-title {
+    width: 50%;
+    margin: 0;
+}
+
+.catalog-select {
+    width: 287px;
+    margin-right: auto;
+}
+
+.view {
+    margin: 0;
+    padding: 0;
+}
+
 /* Footer */
 
-.page-footer {}
+.page-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 72px;
+}
 
-.page-footer-social {}
+.footer-social {
+    margin: 0;
+}
 
-.social {}
+/* Social */
 
-.social-item {}
+.social {
+    padding: 0;
+}
 
-.social-link {}
-
-.visually-hidden {}
 
 .footer-phone {
     color: #000000;
@@ -272,5 +366,3 @@
     line-height: 40px;
     text-decoration: none;
 }
-
-.footer-developer {}
