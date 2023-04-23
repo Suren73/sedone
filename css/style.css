@@ -1,19 +1,18 @@
 @font-face {
-    font-family: 'PT Sans';
+    font-family: "PT Sans";
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-    src: url('../fonts/ptsans-400.woff2') format('woff2');
+    src: url("../fonts/ptsans-400.woff2") format("woff2");
 }
 
 @font-face {
-    font-family: 'PT Sans';
+    font-family: "PT Sans";
     font-weight: 700;
     font-style: normal;
     font-display: swap;
-    src: url('../fonts/ptsans-700.woff2') format('woff2');
+    src: url("../fonts/ptsans-700.woff2") format("woff2");
 }
-
 
 /* Common */
 
@@ -39,9 +38,9 @@
     height: 100%;
 
     color: #333333;
-    background-color: #F2F2F2;
+    background-color: #f2f2f2;
 
-    font-family: 'PT Sans', sans-serif;
+    font-family: "PT Sans", sans-serif;
     font-size: 18px;
 }
 
@@ -59,7 +58,7 @@
 
 .button {
     color: #ffffff;
-    background-color: #83B3D3;
+    background-color: #83b3d3;
 
     font-family: inherit;
     font-size: 16px;
@@ -137,7 +136,7 @@
 
 .main-promo {
     min-height: 485px;
-    background-color: #83B3D3;
+    background-color: #83b3d3;
     background-image: url("../images/background/promo.jpg");
 }
 
@@ -145,8 +144,8 @@
     padding: 35px 72px 80px;
 
     color: #ffffff;
-    background-color: #83B3D3;
-    background-image: url('../images/background/main-header.jpg');
+    background-color: #83b3d3;
+    background-image: url("../images/background/main-header.jpg");
     background-size: cover;
 }
 
@@ -193,7 +192,13 @@
     text-align: center;
 }
 
+.advantages-content {
+    padding: 62px 240px 80px;
+}
+
 .advantages-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     margin: 0;
     padding: 0;
 
@@ -201,11 +206,13 @@
 }
 
 .advantages-list-inner {
+    grid-column: 1 / -1;
     color: #333333;
     background-color: #ffffff;
 }
 
 .advantages-item {
+    padding: 60px;
     background-color: rgba(131, 179, 211, 0.12);
 }
 
@@ -214,8 +221,12 @@
 }
 
 .advantages-item-large {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column: 1 / -1;
+    padding: 0;
     color: #ffffff;
-    background-color: #83B3D3;
+    background-color: #83b3d3;
 }
 
 .advantages-list-inner .advantages-item:nth-child(even) {
@@ -230,10 +241,25 @@
     text-transform: uppercase;
 }
 
-.advantages-item-large>.advantages-title {
+.advantages-description .advantages-title {
     color: #ffffff;
 }
 
+.advantages-img {
+    grid-column: span 2;
+    width: 100%;
+    height: 0;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+.advantages-item-large:nth-child(2) .advantages-img {
+    order: -1;
+}
+
+.advantages-description {
+    padding: 60px;
+}
 
 .advantages-text {
     line-height: 21px;
@@ -242,7 +268,12 @@
 /* Search */
 
 .search {
+    padding: 90px 240px;
     text-align: center;
+}
+
+.search-button {
+    margin-top: 56px;
 }
 
 /* Select */
@@ -255,6 +286,7 @@
 /* Subscribe */
 
 .subscribe {
+    padding: 94px 200px;
     text-align: center;
 }
 
@@ -264,9 +296,15 @@
 
 .subscribe-primary {
     color: #ffffff;
-    background-color: #83B3D3;
+    background-color: #83b3d3;
     background-image: url("../images/background/subscribe.jpg");
     background-size: cover;
+}
+
+.subscribe-form {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    margin-top: 48px;
 }
 
 /* Forms */
@@ -277,7 +315,6 @@
 
     background-color: #f2f2f2;
 }
-
 
 /* Range */
 
@@ -295,9 +332,50 @@
 
 /* Card */
 
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 18px;
+    row-gap: 10px;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr 26px 1fr;
+    grid-template-rows: 206px;
+    grid-template-areas:
+        "image image image"
+        "title title title"
+        "description description description"
+        "button-more . button-chosen"
+        "stars rate rate";
+    row-gap: 16px;
+    padding: 20px;
+}
+
+.card-img {
+    order: -1;
+    width: 100%;
+    height: 100%;
+    grid-area: image;
+
+    object-fit: cover;
+}
+
 .card-title {
+    grid-area: title;
+    margin: 0;
+
     font-size: 24px;
     line-height: 31px;
+}
+
+.card-description {
+    grid-column: description;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 26px;
+    margin: 0;
 }
 
 .card-link {
@@ -306,7 +384,18 @@
     text-decoration: none;
 }
 
+.card-more {
+    grid-area: button-more;
+}
+
+.card-chosen {
+    grid-area: button-chosen;
+}
+
 .card-rate {
+    grid-area: rate;
+    margin: 0;
+
     font-size: 16px;
     text-transform: uppercase;
 }
@@ -314,10 +403,18 @@
 /* Pagination */
 
 .pagination {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 30px 0;
 }
 
+.pagination-button {
+    min-width: 620px;
+}
+
 .pagination-nav {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -330,7 +427,7 @@
     margin: 0;
     padding: 0;
 
-    list-style-type: none;
+    list-style: none;
 }
 
 .pagination-item {
@@ -346,7 +443,7 @@
     padding: 8px;
 
     color: #ffffff;
-    background-color: #83B3D3;
+    background-color: #83b3d3;
 
     font-size: 20px;
     font-weight: 700;
@@ -361,7 +458,10 @@
 /* Filter */
 
 .filter-form {
-    display: flex;
+    display: grid;
+    grid-template-columns: 200px 200px 1fr 223px;
+    justify-content: space-between;
+    gap: 17px;
 }
 
 .filter-title {
@@ -373,13 +473,10 @@
 .filter-fieldset {
     margin: 0;
     padding: 0;
-    width: 200px;
-    margin-right: 17px;
 }
 
 .filter-fieldset-price {
-    width: 287px;
-    margin-left: 95px;
+    margin-left: 96px;
 }
 
 .filter-list {
@@ -392,12 +489,12 @@
 .filter-buttons {
     display: flex;
     flex-direction: column;
-    width: 160px;
-    margin-left: 64px;
+    margin-left: 80px;
 }
 
 .filter-reset {
-    text-align: center;
+    align-self: center;
+
     color: #ffffff;
     background-color: transparent;
 
@@ -412,14 +509,13 @@
 }
 
 .catalog-sort {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 287px max-content;
+    gap: 80px;
     padding: 44px 0;
 }
 
 .catalog-title {
-    width: 50%;
     margin: 0;
 }
 
@@ -433,13 +529,16 @@
 .view {
     display: flex;
     flex-wrap: wrap;
-    margin: 0;
+    justify-content: flex-end;
+    max-width: 224px;
+    margin: -4px;
     padding: 0;
-    list-style-type: none;
+
+    list-style: none;
 }
 
 .view-item {
-    margin: 0 4px;
+    margin: 4px;
 }
 
 .view-link {
@@ -465,13 +564,14 @@
 .social {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 -2px;
     padding: 0;
 
     list-style-type: none;
 }
 
 .social-item {
-    margin: 0 2px;
+    margin: 2px;
 }
 
 .social-link {
